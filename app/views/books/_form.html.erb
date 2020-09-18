@@ -1,0 +1,31 @@
+<%= error_messages_for(f.object) %>
+
+<table summary="Book form fields">
+    <tr>
+        <th>Title</th>
+        <td><%= f.text_field(:title) %></td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:author) %></td>
+    </tr>
+    <tr>
+        <th>Genre</th>
+        <td><%= f.select :genre, [
+            '',
+            'Action',
+            'Fantasy',
+            'Nonfiction',
+            'Mystery',
+            'Romance'
+        ]%></td>
+    </tr>
+    <tr>
+        <th>Price</th>
+        <td><%= f.text_field(:price) %></td>
+    </tr>
+    <tr>
+        <th>Date Published</th>
+        <td><%= f.date_select(:published_date) %></td>
+    </tr>
+</table>

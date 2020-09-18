@@ -1,0 +1,13 @@
+<%= link_to("<< Back to List", books_path, :class => 'back-link') %>
+
+<div class="books new">
+    <h2>Create New Book</h2>
+    <%= form_for(@book, :url => books_path, :method => 'post') do |f| %>
+        
+        <%= render(:partial => 'form', :locals => {:f => f}) %>
+
+        <div class="form-buttons">
+            <%= f.submit("Create Book") %>
+        </div>
+    <% end %>
+</div>

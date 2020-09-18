@@ -1,0 +1,32 @@
+<div class="bookss index">
+    <h2>Book Collection</h2>
+
+    <%= link_to("Add New Book", new_book_path, :class => 'action new') %>
+
+    <table class="listing" summary="Subject list">
+        <tr class="header">
+            <th>#</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Genre</th>
+            <th>Price</th>
+            <th>Date Published</th>
+            <th>Actions</th>
+        </tr>
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.id %></td>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+            <td><%= book.genre %></td>
+            <td><%= book.price %></td>
+            <td><%= book.published_date %></td>
+            <td class="actions">
+                <%= link_to("Show", book_path(book), :class => 'action show') %>
+                <%= link_to("Edit", edit_book_path(book), :class => 'action edit') %>
+                <%= link_to("Delete", delete_book_path(book), :class => 'action delete') %>
+            </td>
+        </tr>
+        <% end %>
+    </table>
+</div>
