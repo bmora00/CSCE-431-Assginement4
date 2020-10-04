@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'books#index'
+  root 'home#index'
   get 'home/index'
 
   resources :books do
